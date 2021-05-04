@@ -1,0 +1,16 @@
+the-prerequisites
+why-use-r-and-r-studio
+more-coding-and-less-point-and-click
+wrote-by-the-people-for-the-people
+r-has-a-large-community
+r-produces-high-quality-graphics
+open-source
+installing-r-and-r-studio
+ive-never-installed-r-and-rstudio-in-my-computer-or-im-not-sure-i-have-r-and-rstudio-installed-in-my-computer.
+i-already-have-r-and-rstudio-installed.
+intro-to-r-part-i
+getting-to-know-your-ide
+operations-and-objects
+challenge
+data-frames
+creating-data-frames

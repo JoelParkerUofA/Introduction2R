@@ -1,9 +1,208 @@
---- 
-title: "YOUR TITLE HERE"
-author: "YOUR NAME HERE"
+---
+title: "Introduction 2 R"
+author: "Joel Parker"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citations: yes
+description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+
 ---
 
-# Down the rabbit-hole
+# The prerequisites
+This is a two part intro to R workshop. Part I introduces the basics of coding in R, including how to manipulate objects, use functions, and write if statements, for loops, and simple functions. Part II is based on the tidyverse package, and it covers how to load, inspect, and explore data in R. While learners at different expertise levels are welcome to attend, these workshops were designed for participants with no or little programming experience. \newline
+
+This lesson plan was created based on many other resources that are already available online, mainly Claudia A Engel’s “Introduction to R” bookdown available at https://cengel.github.io/R-intro and “Programming with R” from Software Carpentry available at http://swcarpentry.github.io/r-novice-inflammation.
+
+
+## Why use R and R Studio
+
+### More coding, and less point and click
+The results in R rely on a series of well defined commands rather than just pointing and clicking. This can allow you to have a better understanding and control of the results. The steps taken in the analysis can be saved making it fast to run the analysis again. This makes statisitical analysis easily reproducible, which is important when conducting research. 
+
+## Wrote by the people for the people
+There are 10,000 + packages that can be used in R. Packages are easy to download and implement. If you can't find a package for your specific need, then you can create your own for yourself and others to use. 
+
+## R has a large community
+
+Thousands of people use R daily. Many of them are willing to help you through mailing lists and websites such as Stack Overflow.
+
+
+## R produces high-quality graphics
+packages like ggplot allow users to create high quality graphics like the one below. 
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(ggplot2)
+library(Lahman)
+data(Teams)
+
+## filter data to just Cubs and Indians since both were playing, in 1901
+## Teams didn't play the same number of games each year, so rescale
+## Use team names instead of codes, and clean up unused teams
+library(dplyr)
+library(forcats)
+library(magrittr)
+Teams %>%
+ filter(franchID %in% c("LAD", "STL", "MIN") & yearID > 1900) %>%
+ mutate(Team = fct_drop(fct_recode(franchID, Cardinals = "STL", Dodgers = "LAD", Twins = "MIN"))) %>%
+ mutate(RunsPerGame = R / G) %>%
+ mutate(HitsPerGame = HA / G) -> CardsDodg.team
+
+
+
+
+
+
+  ggplot(data = CardsDodg.team, aes(yearID,RunsPerGame)) +
+  theme_bw()+
+    geom_point(aes(color =Team)) +
+    geom_smooth(aes(color = Team), method = "loess") +
+    xlab("Year") +
+    ylab("Runs per game") +
+    ggtitle("Runs per Game") +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    scale_color_manual(values =  c("blue","darkgreen","red"))
+
+
+
+
+
+
+
+
+
+
+```
+
+
+## Open Source
+Anyone can inspect the source code to see how R works. Because of this transparency, there is less chance for mistakes, and if you (or someone else) find some, you can report and fix bugs.
+
+
+# Installing R and R Studio
+If you are running your R code in your computer, you need to install both R and RStudio. Alternatively, you can create a free account at http://rstudio.cloud and run your R code in the cloud. Either way, we will be using the same IDE (i.e., RStudio).
+
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
+
+What’s an IDE? IDE stands for integrated development environment, and its goal is to facilitate coding by integrating a text editor, a console and other tools into one window.
+
+</div>
+
+##  I’ve never installed R and RStudio in my computer OR I’m not sure I have R and RStudio installed in my computer.
+
+1. Download and install R from https://cran.r-project.org
+2. Download and install RStudio from https://rstudio.com/products/rstudio/download/#download
+
+## I already have R and RStudio installed.
+1. Open RStudio
+2. Check your R version by entering sessionInfo() on your console.
+3. The latest release for R was April 24, 2020 (R version 4.0.0, 2020-04-24, Arbor Day). If your R version is older than the most recent version, please follow step 1 in the previous section to update R.
+4. Check your RStudio version, if your version is older than Version 1.2.5042, please follow step 2 in the previous section to update RStudio.
+
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
+
+How often should I update R and RStudio? Always make sure that you have the latest version of R, RStudio, and the packages you’re using in your code to ensure you are not running into bugs that are caused by having older versions installed in your computer.
+
+When asked, Jenny Bryan summarizes the importance of keeping your system up-to-date saying that “You will always eventually have a reason that you must update. So you can either do that very infrequently, suffer with old versions in the middle, and experience great pain at update. Or admit that maintaining your system is a normal ongoing activity, and do it more often.”
+
+</div>
+
+# Intro to R Part I
+## Getting to know your IDE
+
+<p style="background-color:DodgerBlue;">
+
+What’s an \textbf{IDE}? IDE stands for \textbf{i}ntegrated \textbf{d}evelopment \textbf{e}nvironment, and its goal is to facilitate coding by integrating a text editor, a console and other tools into one window.
+</p>
+
+
+
+We are using RStudio as our IDE for this workshop. You can either download and install R and RStudio on your computer (for instructions on how to do so, see the “Before we start” section) or create a free account at http://rstudio.cloud and run your R code in the cloud.
+
+In this part of the workshop we will start an R project and situating ourselves around our IDE.
+
+
+
+
+
+## Operations and Objects
+Let’s start by using R as a calculator. On your console type 3 + 3 and hit enter.
+```{r}
+
+3 + 3
+```
+
+Let’s save our calculation into an object, by using the assignment symbol <-.
+```{r}
+sum_result <- 3 + 3
+
+```
+
+
+We can treat this new object like a number
+```{r}
+3+3+3
+
+
+sum_result +3
+
+```
+
+<p style="background-color:DodgerBlue;">
+
+Look at your global enviroment in the the topright. Your object has been stored to use for the future. Clearing the enviroment will delete all objects in the enviroment. 
+
+</p>
+
+You can also make a vector that hold multiple numbers. Suppose you need to create a vector of dogs ages for 5 dogs. This can be accomplished in the following code. 
+```{r}
+dogs_age <- c(5,3,7,2,1)
+
+```
+
+
+Then we can multiply all of the elements of a vector (if all elements are numeric). Below we can see how old each dog is in human years. 
+
+```{r}
+dogs_human_years <- dogs_age* 7
+
+dogs_human_years
+
+```
+
+
+
+
+
+### **Challenge**
+<p style="background-color:Tomato;">
+Create a vector of peoples jobs experience with 1,4,6,2,3 and 8 years. Let say if everyone starts out making \$60,000 and \$5,000 for every year of expirence. How much money is each person curently making?
+</p>
+
+
+
+# Data Frames
+Generally researchers are interested in working with data frames rather than individual vectors. Data frames can be read into R or created within R.
+
+## Creating data frames
+
+
+
+
+
+
+
+
+
+
+
+
+
 

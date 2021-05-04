@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Introduction 2 R</title>
+  <title>Chapter 5 Down the rabbit-hole | Introduction 2 R</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Introduction 2 R" />
+  <meta property="og:title" content="Chapter 5 Down the rabbit-hole | Introduction 2 R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction 2 R" />
+  <meta name="twitter:title" content="Chapter 5 Down the rabbit-hole | Introduction 2 R" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="installing-r-and-r-studio.html"/>
+<link rel="prev" href="data-frames.html"/>
+<link rel="next" href="the-pool-of-tears.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -153,6 +153,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4" data-path="data-frames.html"><a href="data-frames.html"><i class="fa fa-check"></i><b>4</b> Data Frames</a><ul>
 <li class="chapter" data-level="4.1" data-path="data-frames.html"><a href="data-frames.html#creating-data-frames"><i class="fa fa-check"></i><b>4.1</b> Creating data frames</a></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="down-the-rabbit-hole.html"><a href="down-the-rabbit-hole.html"><i class="fa fa-check"></i><b>5</b> Down the rabbit-hole</a></li>
+<li class="chapter" data-level="6" data-path="the-pool-of-tears.html"><a href="the-pool-of-tears.html"><i class="fa fa-check"></i><b>6</b> The pool of tears</a></li>
+<li class="chapter" data-level="7" data-path="a-caucus-race-and-a-long-tale.html"><a href="a-caucus-race-and-a-long-tale.html"><i class="fa fa-check"></i><b>7</b> A caucus-race and a long tale</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -172,47 +175,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Introduction 2 R</h1>
-<p class="author"><em>Joel Parker</em></p>
-<p class="date"><em>2021-05-03</em></p>
-</div>
-<div id="the-prerequisites" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> The prerequisites</h1>
-<p>This is a two part intro to R workshop. Part I introduces the basics of coding in R, including how to manipulate objects, use functions, and write if statements, for loops, and simple functions. Part II is based on the tidyverse package, and it covers how to load, inspect, and explore data in R. While learners at different expertise levels are welcome to attend, these workshops were designed for participants with no or little programming experience. </p>
-<p>This lesson plan was created based on many other resources that are already available online, mainly Claudia A Engel’s “Introduction to R” bookdown available at <a href="https://cengel.github.io/R-intro" class="uri">https://cengel.github.io/R-intro</a> and “Programming with R” from Software Carpentry available at <a href="http://swcarpentry.github.io/r-novice-inflammation" class="uri">http://swcarpentry.github.io/r-novice-inflammation</a>.</p>
-<div id="why-use-r-and-r-studio" class="section level2">
-<h2><span class="header-section-number">1.1</span> Why use R and R Studio</h2>
-<div id="more-coding-and-less-point-and-click" class="section level3">
-<h3><span class="header-section-number">1.1.1</span> More coding, and less point and click</h3>
-<p>The results in R rely on a series of well defined commands rather than just pointing and clicking. This can allow you to have a better understanding and control of the results. The steps taken in the analysis can be saved making it fast to run the analysis again. This makes statisitical analysis easily reproducible, which is important when conducting research.</p>
-</div>
-</div>
-<div id="wrote-by-the-people-for-the-people" class="section level2">
-<h2><span class="header-section-number">1.2</span> Wrote by the people for the people</h2>
-<p>There are 10,000 + packages that can be used in R. Packages are easy to download and implement. If you can’t find a package for your specific need, then you can create your own for yourself and others to use.</p>
-</div>
-<div id="r-has-a-large-community" class="section level2">
-<h2><span class="header-section-number">1.3</span> R has a large community</h2>
-<p>Thousands of people use R daily. Many of them are willing to help you through mailing lists and websites such as Stack Overflow.</p>
-</div>
-<div id="r-produces-high-quality-graphics" class="section level2">
-<h2><span class="header-section-number">1.4</span> R produces high-quality graphics</h2>
-<p>packages like ggplot allow users to create high quality graphics like the one below.</p>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-</div>
-<div id="open-source" class="section level2">
-<h2><span class="header-section-number">1.5</span> Open Source</h2>
-<p>Anyone can inspect the source code to see how R works. Because of this transparency, there is less chance for mistakes, and if you (or someone else) find some, you can report and fix bugs.</p>
-</div>
+<div id="down-the-rabbit-hole" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Down the rabbit-hole</h1>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="installing-r-and-r-studio.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="data-frames.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="the-pool-of-tears.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
