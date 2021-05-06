@@ -12,5 +12,11 @@ intro-to-r-part-i
 getting-to-know-your-ide
 operations-and-objects
 challenge
+packages
+help-files
+help-files-for-package
+help-files-for-funcitons
 data-frames
+loading-in-data-frames-from-a-package
+saving-csv-files.
 creating-data-frames

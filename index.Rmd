@@ -186,10 +186,67 @@ dogs_human_years
 Create a vector of peoples jobs experience with 1,4,6,2,3 and 8 years. Let say if everyone starts out making \$60,000 and \$5,000 for every year of expirence. How much money is each person curently making?
 </p>
 
+# Packages
+One advantage of the R is there is a big communitee of users. The Comrehensive R Archive Network (CRAN) stores packaged bundles of code that allow users to have access to many different functions. Packages are easy to down load and use. For starters lets install the ggplot2 package using install.packages("Lahman"). Let find out more about the ggplot2 package.
 
+## Help files
+
+### Help files for package
+```{r}
+help(package="ggplot2")
+
+```
+
+
+### Help files for funcitons
+```{r}
+?ggplot2::ggplot()
+
+```
+
+or:
+```{r}
+library(ggplot2)
+?ggplot()
+
+```
 
 # Data Frames
 Generally researchers are interested in working with data frames rather than individual vectors. Data frames can be read into R or created within R.
+
+## loading in data frames from a package
+For this workshop we will be working with data from the Lahmen data base. This can be downloaded as a package using the instructions from above. 
+
+```{r}
+#install.packages("Lahmen")
+
+library(Lahman)
+
+data(Batting)
+
+# Allows you to see the first 6 hitters
+head(Batting)
+
+```
+
+
+## Saving CSV files.
+First you want to find your directory. 
+```{r}
+getwd()
+
+```
+
+When you save a file it will be saved to this directory. You can save a csv file with the following code. 
+
+
+You can save a csv file with the following code. 
+```{r}
+write.csv(Batting, "battingexample.csv")
+
+```
+
+
 
 ## Creating data frames
 
