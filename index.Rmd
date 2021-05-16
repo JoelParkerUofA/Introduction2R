@@ -248,18 +248,44 @@ write.csv(Batting, "battingexample.csv")
 
 
 
-## Creating data frames
+## Creating data frames in R
+You can also create data frames within R. Here we are creating a data frame with hits and at bats for different players. 
+
+```{r}
+# create player 
+
+player <- c("Player01", "Player02", "Player03", "Player04","Player05")
+
+# Create Vector of Hits
+hits <- c(3,1,0,2,4)
+
+
+# Create Vector of At Bats
+at_bats <- c(4,4,3,5,4)
+
+# Create full data frame
+hits_data_frame <- data.frame(PlayerID = player,
+                                 Hits=hits,
+                                 AtBats = at_bats)
+
+hits_data_frame
+```
+
+
+<p style="background-color:Dodgerblue;">
+Note: Every vector used in the data frame must be of equal length.
+</p>
+
+
+### Challenge
+<p style="background-color:Tomato;">
+Create a data frame within R which stores information about 5 teams. The first column has team name, second column has wins, and the third column has losses. Team name and win/losses can be made up. Store the data with the name step_1. Save this data fram as a .csv file and then upload the saved data stored with the name step_2. 
+</p>
 
 
 
 
-
-
-
-
-
-
-
-
+# Manipulating data frames.
+Often
 
 
