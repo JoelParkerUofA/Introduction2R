@@ -19,5 +19,6 @@ help-files-for-funcitons
 data-frames
 loading-in-data-frames-from-a-package
 saving-csv-files.
-creating-data-frames
 creating-data-frames-in-r
+challenge-1
+manipulating-data-frames.
