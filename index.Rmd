@@ -11,7 +11,7 @@ description: "This is an intro to R workshop."
 ---
 
 # The Prerequisites
-This is an intro to R workshop for coders with little or no experience using R. Of course all levels or R users are welcome to attend and engage in the content. In this lesson we will learn \newline
+This is an intro to R workshop for coders with little or no experience using R. Of course all levels or R users are welcome to attend and engage in the content. In this work shop we will learn basic R functions, reading help files, creating and importing data frames, for loops, while loops, and creating functions.  \newline
 
 The material covered in this workshop closely follows the 2020 ResBaz intro to R course found here https://picoral.github.io/resbaz_intro_to_r/index.html
 
