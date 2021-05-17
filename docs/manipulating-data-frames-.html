@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Manipulating data frames. | Introduction 2 R</title>
-  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <title>Chapter 7 Manipulating data frames. | Introduction 2 R</title>
+  <meta name="description" content="This is an intro to R workshop." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Manipulating data frames. | Introduction 2 R" />
+  <meta property="og:title" content="Chapter 7 Manipulating data frames. | Introduction 2 R" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta property="og:description" content="This is an intro to R workshop." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Manipulating data frames. | Introduction 2 R" />
+  <meta name="twitter:title" content="Chapter 7 Manipulating data frames. | Introduction 2 R" />
   
-  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="This is an intro to R workshop." />
   
 
 <meta name="author" content="Joel Parker" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="data-frames.html"/>
-
+<link rel="next" href="descriptive-states-in-data-frames-.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -131,7 +131,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Introduction To R</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> The prerequisites</a><ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> The Prerequisites</a><ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#why-use-r-and-r-studio"><i class="fa fa-check"></i><b>1.1</b> Why use R and R Studio</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#more-coding-and-less-point-and-click"><i class="fa fa-check"></i><b>1.1.1</b> More coding, and less point and click</a></li>
 </ul></li>
@@ -141,29 +141,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#open-source"><i class="fa fa-check"></i><b>1.5</b> Open Source</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="installing-r-and-r-studio.html"><a href="installing-r-and-r-studio.html"><i class="fa fa-check"></i><b>2</b> Installing R and R Studio</a><ul>
-<li class="chapter" data-level="2.1" data-path="installing-r-and-r-studio.html"><a href="installing-r-and-r-studio.html#ive-never-installed-r-and-rstudio-in-my-computer-or-im-not-sure-i-have-r-and-rstudio-installed-in-my-computer."><i class="fa fa-check"></i><b>2.1</b> I’ve never installed R and RStudio in my computer OR I’m not sure I have R and RStudio installed in my computer.</a></li>
+<li class="chapter" data-level="2.1" data-path="installing-r-and-r-studio.html"><a href="installing-r-and-r-studio.html#installing-r-and-r-studio-1"><i class="fa fa-check"></i><b>2.1</b> Installing R and R studio</a></li>
 <li class="chapter" data-level="2.2" data-path="installing-r-and-r-studio.html"><a href="installing-r-and-r-studio.html#i-already-have-r-and-rstudio-installed."><i class="fa fa-check"></i><b>2.2</b> I already have R and RStudio installed.</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="intro-to-r-part-i.html"><a href="intro-to-r-part-i.html"><i class="fa fa-check"></i><b>3</b> Intro to R Part I</a><ul>
 <li class="chapter" data-level="3.1" data-path="intro-to-r-part-i.html"><a href="intro-to-r-part-i.html#getting-to-know-your-ide"><i class="fa fa-check"></i><b>3.1</b> Getting to know your IDE</a></li>
-<li class="chapter" data-level="3.2" data-path="intro-to-r-part-i.html"><a href="intro-to-r-part-i.html#operations-and-objects"><i class="fa fa-check"></i><b>3.2</b> Operations and Objects</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="intro-to-r-part-i.html"><a href="intro-to-r-part-i.html#challenge"><i class="fa fa-check"></i><b>3.2.1</b> <strong>Challenge</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="operations-and-objects.html"><a href="operations-and-objects.html"><i class="fa fa-check"></i><b>4</b> Operations and Objects</a><ul>
+<li class="chapter" data-level="4.0.1" data-path="operations-and-objects.html"><a href="operations-and-objects.html#challenge"><i class="fa fa-check"></i><b>4.0.1</b> <strong>Challenge</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>5</b> Packages</a><ul>
+<li class="chapter" data-level="5.1" data-path="packages.html"><a href="packages.html#help-files"><i class="fa fa-check"></i><b>5.1</b> Help files</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="packages.html"><a href="packages.html#help-files-for-package"><i class="fa fa-check"></i><b>5.1.1</b> Help files for package</a></li>
+<li class="chapter" data-level="5.1.2" data-path="packages.html"><a href="packages.html#help-files-for-funcitons"><i class="fa fa-check"></i><b>5.1.2</b> Help files for funcitons</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>4</b> Packages</a><ul>
-<li class="chapter" data-level="4.1" data-path="packages.html"><a href="packages.html#help-files"><i class="fa fa-check"></i><b>4.1</b> Help files</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="packages.html"><a href="packages.html#help-files-for-package"><i class="fa fa-check"></i><b>4.1.1</b> Help files for package</a></li>
-<li class="chapter" data-level="4.1.2" data-path="packages.html"><a href="packages.html#help-files-for-funcitons"><i class="fa fa-check"></i><b>4.1.2</b> Help files for funcitons</a></li>
+<li class="chapter" data-level="6" data-path="data-frames.html"><a href="data-frames.html"><i class="fa fa-check"></i><b>6</b> Data Frames</a><ul>
+<li class="chapter" data-level="6.1" data-path="data-frames.html"><a href="data-frames.html#loading-in-data-frames-from-a-package"><i class="fa fa-check"></i><b>6.1</b> loading in data frames from a package</a></li>
+<li class="chapter" data-level="6.2" data-path="data-frames.html"><a href="data-frames.html#saving-csv-files."><i class="fa fa-check"></i><b>6.2</b> Saving CSV files.</a></li>
+<li class="chapter" data-level="6.3" data-path="data-frames.html"><a href="data-frames.html#creating-data-frames-in-r"><i class="fa fa-check"></i><b>6.3</b> Creating data frames in R</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="data-frames.html"><a href="data-frames.html#challenge-1"><i class="fa fa-check"></i><b>6.3.1</b> Challenge</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="data-frames.html"><a href="data-frames.html"><i class="fa fa-check"></i><b>5</b> Data Frames</a><ul>
-<li class="chapter" data-level="5.1" data-path="data-frames.html"><a href="data-frames.html#loading-in-data-frames-from-a-package"><i class="fa fa-check"></i><b>5.1</b> loading in data frames from a package</a></li>
-<li class="chapter" data-level="5.2" data-path="data-frames.html"><a href="data-frames.html#saving-csv-files."><i class="fa fa-check"></i><b>5.2</b> Saving CSV files.</a></li>
-<li class="chapter" data-level="5.3" data-path="data-frames.html"><a href="data-frames.html#creating-data-frames-in-r"><i class="fa fa-check"></i><b>5.3</b> Creating data frames in R</a><ul>
-<li class="chapter" data-level="5.3.1" data-path="data-frames.html"><a href="data-frames.html#challenge-1"><i class="fa fa-check"></i><b>5.3.1</b> Challenge</a></li>
+<li class="chapter" data-level="7" data-path="manipulating-data-frames-.html"><a href="manipulating-data-frames-.html"><i class="fa fa-check"></i><b>7</b> Manipulating data frames.</a><ul>
+<li class="chapter" data-level="7.1" data-path="manipulating-data-frames-.html"><a href="manipulating-data-frames-.html#slicing-a-data-frame"><i class="fa fa-check"></i><b>7.1</b> Slicing a data frame</a></li>
+<li class="chapter" data-level="7.2" data-path="manipulating-data-frames-.html"><a href="manipulating-data-frames-.html#creating-new-columns"><i class="fa fa-check"></i><b>7.2</b> Creating new columns</a></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="descriptive-states-in-data-frames-.html"><a href="descriptive-states-in-data-frames-.html"><i class="fa fa-check"></i><b>8</b> Descriptive States in data frames.</a><ul>
+<li class="chapter" data-level="8.0.1" data-path="descriptive-states-in-data-frames-.html"><a href="descriptive-states-in-data-frames-.html#challenge-2"><i class="fa fa-check"></i><b>8.0.1</b> <strong>Challenge</strong></a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="manipulating-data-frames-.html"><a href="manipulating-data-frames-.html"><i class="fa fa-check"></i><b>6</b> Manipulating data frames.</a></li>
+<li class="chapter" data-level="9" data-path="for-loops-and-while-loops-.html"><a href="for-loops-and-while-loops-.html"><i class="fa fa-check"></i><b>9</b> For loops and while loops.</a></li>
+<li class="chapter" data-level="10" data-path="if-block.html"><a href="if-block.html"><i class="fa fa-check"></i><b>10</b> If block</a><ul>
+<li class="chapter" data-level="10.0.1" data-path="if-block.html"><a href="if-block.html#challenge-3"><i class="fa fa-check"></i><b>10.0.1</b> <strong>Challenge</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="creating-functions-.html"><a href="creating-functions-.html"><i class="fa fa-check"></i><b>11</b> Creating functions.</a></li>
+<li class="chapter" data-level="12" data-path="q-and-a.html"><a href="q-and-a.html"><i class="fa fa-check"></i><b>12</b> Q and A</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -184,17 +196,124 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="manipulating-data-frames." class="section level1">
-<h1><span class="header-section-number">Chapter 6</span> Manipulating data frames.</h1>
-<p>Often</p>
-
+<h1><span class="header-section-number">Chapter 7</span> Manipulating data frames.</h1>
+<p>Most of the time data does not come us ready to analyze and we must make manipulations to the data frame. Base R has many useful functions that will allow us to do this.</p>
+<div id="slicing-a-data-frame" class="section level2">
+<h2><span class="header-section-number">7.1</span> Slicing a data frame</h2>
+<p>We may intersted in looking at just 1 column or 1 row. We can do this with by specifying the indicies for the rows and columns.</p>
+<ul>
+<li>full data frame</li>
+</ul>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1"><span class="co"># dataframe[rows, columns]</span></a>
+<a class="sourceLine" id="cb22-2" title="2"></a>
+<a class="sourceLine" id="cb22-3" title="3">hits_data_frame</a></code></pre></div>
+<pre><code>##   PlayerID Hits AtBats
+## 1 Player01    3      4
+## 2 Player02    1      4
+## 3 Player03    0      3
+## 4 Player04    2      5
+## 5 Player05    4      4</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" title="1"><span class="co"># dataframe[rows, columns]</span></a>
+<a class="sourceLine" id="cb24-2" title="2">hits_data_frame[,]</a></code></pre></div>
+<pre><code>##   PlayerID Hits AtBats
+## 1 Player01    3      4
+## 2 Player02    1      4
+## 3 Player03    0      3
+## 4 Player04    2      5
+## 5 Player05    4      4</code></pre>
+<p style="background-color:Dodgerblue;">
+Note: If we dont specify which rows or columns we want we get the whole data frame back.
+</p>
+<ul>
+<li>Second row</li>
+</ul>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1"><span class="co"># dataframe[rows, columns]</span></a>
+<a class="sourceLine" id="cb26-2" title="2"></a>
+<a class="sourceLine" id="cb26-3" title="3"></a>
+<a class="sourceLine" id="cb26-4" title="4">hits_data_frame[<span class="dv">2</span>,]</a></code></pre></div>
+<pre><code>##   PlayerID Hits AtBats
+## 2 Player02    1      4</code></pre>
+<ul>
+<li>second column</li>
+</ul>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1">hits_data_frame[,<span class="dv">2</span>]</a></code></pre></div>
+<pre><code>## [1] 3 1 0 2 4</code></pre>
+<ul>
+<li>Second row of the second column</li>
+</ul>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1">hits_data_frame[<span class="dv">2</span>,<span class="dv">2</span>]</a></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<p>We can also use column names to slice data: </p>
+<p>First lets get the names of the columns in the data frame.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" title="1"><span class="kw">names</span>(hits_data_frame)</a></code></pre></div>
+<pre><code>## [1] &quot;PlayerID&quot; &quot;Hits&quot;     &quot;AtBats&quot;</code></pre>
+<p>Now we can use these column names to select the hits columns.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" title="1">hits_data_frame[,<span class="kw">c</span>(<span class="st">&quot;Hits&quot;</span>)]</a></code></pre></div>
+<pre><code>## [1] 3 1 0 2 4</code></pre>
+<p>We can pass a vector of column names if we want more than 1 column.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" title="1">hits_data_frame[,<span class="kw">c</span>(<span class="st">&quot;Hits&quot;</span>,<span class="st">&quot;PlayerID&quot;</span>)]</a></code></pre></div>
+<pre><code>##   Hits PlayerID
+## 1    3 Player01
+## 2    1 Player02
+## 3    0 Player03
+## 4    2 Player04
+## 5    4 Player05</code></pre>
+<p>You can also use the $ sign to specify columns</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" title="1"><span class="co"># get player ID column</span></a>
+<a class="sourceLine" id="cb38-2" title="2"></a>
+<a class="sourceLine" id="cb38-3" title="3">hits_data_frame<span class="op">$</span>PlayerID</a></code></pre></div>
+<pre><code>## [1] &quot;Player01&quot; &quot;Player02&quot; &quot;Player03&quot; &quot;Player04&quot; &quot;Player05&quot;</code></pre>
+<p>In the case the column is treated as a vector which can be manipulated.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" title="1"><span class="co">## select 4th player</span></a>
+<a class="sourceLine" id="cb40-2" title="2"></a>
+<a class="sourceLine" id="cb40-3" title="3">hits_data_frame<span class="op">$</span>PlayerID[<span class="dv">4</span>]</a></code></pre></div>
+<pre><code>## [1] &quot;Player04&quot;</code></pre>
+<p>We can also assign a new value here.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" title="1"><span class="co">## Changing value of a sliced data frame. </span></a>
+<a class="sourceLine" id="cb42-2" title="2"></a>
+<a class="sourceLine" id="cb42-3" title="3">hits_data_frame<span class="op">$</span>PlayerID[<span class="dv">4</span>] &lt;-<span class="st"> &quot;PlayerNew&quot;</span></a>
+<a class="sourceLine" id="cb42-4" title="4"></a>
+<a class="sourceLine" id="cb42-5" title="5">hits_data_frame<span class="op">$</span>PlayerID[<span class="dv">4</span>]</a></code></pre></div>
+<pre><code>## [1] &quot;PlayerNew&quot;</code></pre>
+<p>Operations can also be also be completed in the brackets to help filter data</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" title="1"><span class="co">## Filtering with which()</span></a>
+<a class="sourceLine" id="cb44-2" title="2"></a>
+<a class="sourceLine" id="cb44-3" title="3"><span class="kw">which</span>(hits_data_frame<span class="op">$</span>PlayerID <span class="op">==</span><span class="st"> &quot;PlayerNew&quot;</span>)</a></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<p>what this means is player new is the 4th observation. We can filter the whole data frame with.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" title="1"><span class="co"># Hits filtered</span></a>
+<a class="sourceLine" id="cb46-2" title="2">hits_data_frame[<span class="kw">which</span>(hits_data_frame<span class="op">$</span>PlayerID <span class="op">==</span><span class="st"> &quot;PlayerNew&quot;</span>),]</a></code></pre></div>
+<pre><code>##    PlayerID Hits AtBats
+## 4 PlayerNew    2      5</code></pre>
+</div>
+<div id="creating-new-columns" class="section level2">
+<h2><span class="header-section-number">7.2</span> Creating new columns</h2>
+<p>you can create new columns with mathematical operations like <span class="math inline">\(+\)</span>,<span class="math inline">\(-\)</span>,<span class="math inline">\(/\)</span> and <span class="math inline">\(*\)</span></p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" title="1"><span class="co">### Create new columns with / dividing</span></a>
+<a class="sourceLine" id="cb48-2" title="2"></a>
+<a class="sourceLine" id="cb48-3" title="3">hits_data_frame<span class="op">$</span>batting_average &lt;-<span class="st"> </span>hits_data_frame<span class="op">$</span>Hits <span class="op">/</span><span class="st"> </span>hits_data_frame<span class="op">$</span>AtBats</a>
+<a class="sourceLine" id="cb48-4" title="4"></a>
+<a class="sourceLine" id="cb48-5" title="5"></a>
+<a class="sourceLine" id="cb48-6" title="6"><span class="co">### Create new columns with - subtracting</span></a>
+<a class="sourceLine" id="cb48-7" title="7">hits_data_frame<span class="op">$</span>outs &lt;-<span class="st"> </span>hits_data_frame<span class="op">$</span>AtBats <span class="op">-</span><span class="st"> </span>hits_data_frame<span class="op">$</span>Hits</a>
+<a class="sourceLine" id="cb48-8" title="8"></a>
+<a class="sourceLine" id="cb48-9" title="9"></a>
+<a class="sourceLine" id="cb48-10" title="10">hits_data_frame</a></code></pre></div>
+<pre><code>##    PlayerID Hits AtBats batting_average outs
+## 1  Player01    3      4            0.75    1
+## 2  Player02    1      4            0.25    3
+## 3  Player03    0      3            0.00    3
+## 4 PlayerNew    2      5            0.40    3
+## 5  Player05    4      4            1.00    0</code></pre>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="data-frames.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="data-frames.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="descriptive-states-in-data-frames-.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -244,6 +363,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Packages | Introduction 2 R</title>
+  <title>Chapter 10 If block | Introduction 2 R</title>
   <meta name="description" content="This is an intro to R workshop." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Packages | Introduction 2 R" />
+  <meta property="og:title" content="Chapter 10 If block | Introduction 2 R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Packages | Introduction 2 R" />
+  <meta name="twitter:title" content="Chapter 10 If block | Introduction 2 R" />
   
   <meta name="twitter:description" content="This is an intro to R workshop." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="operations-and-objects.html"/>
-<link rel="next" href="data-frames.html"/>
+<link rel="prev" href="for-loops-and-while-loops-.html"/>
+<link rel="next" href="creating-functions-.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -195,23 +195,62 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="packages" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> Packages</h1>
-<p>One advantage of the R is there is a big communitee of users. The Comrehensive R Archive Network (CRAN) stores packaged bundles of code that allow users to have access to many different functions. Packages are easy to down load and use. For starters lets install the ggplot2 package using install.packages(“Lahman”). Let find out more about the ggplot2 package.</p>
-<div id="help-files" class="section level2">
-<h2><span class="header-section-number">5.1</span> Help files</h2>
-<div id="help-files-for-package" class="section level3">
-<h3><span class="header-section-number">5.1.1</span> Help files for package</h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">help</span>(<span class="dt">package=</span><span class="st">&quot;ggplot2&quot;</span>)</a></code></pre></div>
-</div>
-<div id="help-files-for-funcitons" class="section level3">
-<h3><span class="header-section-number">5.1.2</span> Help files for funcitons</h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1">?ggplot2<span class="op">::</span><span class="kw">ggplot</span>()</a></code></pre></div>
-<pre><code>## starting httpd help server ... done</code></pre>
-<p>or:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb14-2" title="2">?<span class="kw">ggplot</span>()</a></code></pre></div>
-</div>
+<div id="if-block" class="section level1">
+<h1><span class="header-section-number">Chapter 10</span> If block</h1>
+<p>When creating a new column we may want the values of the column to be different depending on some condition. We can do this with an if block.</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" title="1"><span class="co">## We will be creating a player type variabe that shows they are &quot;bad&quot; if batting average &lt; 0.25, good if below 0.75 and great if greater than or equal to 0.75</span></a>
+<a class="sourceLine" id="cb66-2" title="2"></a>
+<a class="sourceLine" id="cb66-3" title="3"><span class="co"># Create for loop to look at each player separatly</span></a>
+<a class="sourceLine" id="cb66-4" title="4"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(hits_data_frame)){</a>
+<a class="sourceLine" id="cb66-5" title="5">  </a>
+<a class="sourceLine" id="cb66-6" title="6">  </a>
+<a class="sourceLine" id="cb66-7" title="7">  <span class="co">## isolate player</span></a>
+<a class="sourceLine" id="cb66-8" title="8">  player_average &lt;-<span class="st"> </span>hits_data_frame<span class="op">$</span>batting_average[i]</a>
+<a class="sourceLine" id="cb66-9" title="9">  </a>
+<a class="sourceLine" id="cb66-10" title="10">  </a>
+<a class="sourceLine" id="cb66-11" title="11">  <span class="co">## bad condition </span></a>
+<a class="sourceLine" id="cb66-12" title="12">  <span class="cf">if</span>(player_average <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.25</span>){</a>
+<a class="sourceLine" id="cb66-13" title="13">    </a>
+<a class="sourceLine" id="cb66-14" title="14">    <span class="co">## Assign new bad value to new variable</span></a>
+<a class="sourceLine" id="cb66-15" title="15">    hits_data_frame<span class="op">$</span>player_type[i] &lt;-<span class="st"> &quot;bad&quot;</span> </a>
+<a class="sourceLine" id="cb66-16" title="16">    </a>
+<a class="sourceLine" id="cb66-17" title="17">  }</a>
+<a class="sourceLine" id="cb66-18" title="18">  </a>
+<a class="sourceLine" id="cb66-19" title="19">  <span class="co">## Assign new good value to new variable</span></a>
+<a class="sourceLine" id="cb66-20" title="20">  <span class="cf">if</span>(player_average <span class="op">&gt;=</span><span class="st"> </span><span class="fl">0.25</span> <span class="op">&amp;</span><span class="st">  </span>player_average<span class="op">&lt;</span><span class="fl">0.75</span>){</a>
+<a class="sourceLine" id="cb66-21" title="21">    </a>
+<a class="sourceLine" id="cb66-22" title="22">      hits_data_frame<span class="op">$</span>player_type[i] &lt;-<span class="st"> &quot;good&quot;</span> </a>
+<a class="sourceLine" id="cb66-23" title="23">  }</a>
+<a class="sourceLine" id="cb66-24" title="24">  </a>
+<a class="sourceLine" id="cb66-25" title="25">  <span class="co">## Assign great value to new value</span></a>
+<a class="sourceLine" id="cb66-26" title="26">    <span class="cf">if</span>(player_average<span class="op">&gt;=</span><span class="fl">0.75</span>){</a>
+<a class="sourceLine" id="cb66-27" title="27">    </a>
+<a class="sourceLine" id="cb66-28" title="28">      hits_data_frame<span class="op">$</span>player_type[i] &lt;-<span class="st"> &quot;great&quot;</span> </a>
+<a class="sourceLine" id="cb66-29" title="29">  }</a>
+<a class="sourceLine" id="cb66-30" title="30">  </a>
+<a class="sourceLine" id="cb66-31" title="31">  </a>
+<a class="sourceLine" id="cb66-32" title="32">  </a>
+<a class="sourceLine" id="cb66-33" title="33">  </a>
+<a class="sourceLine" id="cb66-34" title="34">}</a>
+<a class="sourceLine" id="cb66-35" title="35"></a>
+<a class="sourceLine" id="cb66-36" title="36"></a>
+<a class="sourceLine" id="cb66-37" title="37">hits_data_frame</a></code></pre></div>
+<pre><code>##    PlayerID Hits AtBats batting_average outs player_type
+## 1  Player01    3      4            0.75    1       great
+## 2  Player02    1      4            0.25    3        good
+## 3  Player03    0      3            0.00    3         bad
+## 4 PlayerNew    2      5            0.40    3        good
+## 5  Player05    4      4            1.00    0       great</code></pre>
+<p>you can use the table function to see how many of each type of player you have.</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" title="1"><span class="kw">table</span>(hits_data_frame<span class="op">$</span>player_type)</a></code></pre></div>
+<pre><code>## 
+##   bad  good great 
+##     1     2     2</code></pre>
+<div id="challenge-3" class="section level3">
+<h3><span class="header-section-number">10.0.1</span> <strong>Challenge</strong></h3>
+<p style="background-color:Tomato;">
+Create a “team” variable with a while loop or for loop to look at each players “player_type”. If they “player_type” is great, then assign them to the “Cardinals”. If the player type is good, then send them to the “Twins”. If a “player_type” is bad then assign them to the “Dodgers”
+</p>
 </div>
 </div>
             </section>
@@ -219,8 +258,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="operations-and-objects.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="data-frames.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="for-loops-and-while-loops-.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="creating-functions-.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

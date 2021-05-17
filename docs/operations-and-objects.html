@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Packages | Introduction 2 R</title>
+  <title>Chapter 4 Operations and Objects | Introduction 2 R</title>
   <meta name="description" content="This is an intro to R workshop." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Packages | Introduction 2 R" />
+  <meta property="og:title" content="Chapter 4 Operations and Objects | Introduction 2 R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Packages | Introduction 2 R" />
+  <meta name="twitter:title" content="Chapter 4 Operations and Objects | Introduction 2 R" />
   
   <meta name="twitter:description" content="This is an intro to R workshop." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="operations-and-objects.html"/>
-<link rel="next" href="data-frames.html"/>
+<link rel="prev" href="intro-to-r-part-i.html"/>
+<link rel="next" href="packages.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -195,23 +195,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="packages" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> Packages</h1>
-<p>One advantage of the R is there is a big communitee of users. The Comrehensive R Archive Network (CRAN) stores packaged bundles of code that allow users to have access to many different functions. Packages are easy to down load and use. For starters lets install the ggplot2 package using install.packages(“Lahman”). Let find out more about the ggplot2 package.</p>
-<div id="help-files" class="section level2">
-<h2><span class="header-section-number">5.1</span> Help files</h2>
-<div id="help-files-for-package" class="section level3">
-<h3><span class="header-section-number">5.1.1</span> Help files for package</h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">help</span>(<span class="dt">package=</span><span class="st">&quot;ggplot2&quot;</span>)</a></code></pre></div>
-</div>
-<div id="help-files-for-funcitons" class="section level3">
-<h3><span class="header-section-number">5.1.2</span> Help files for funcitons</h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1">?ggplot2<span class="op">::</span><span class="kw">ggplot</span>()</a></code></pre></div>
-<pre><code>## starting httpd help server ... done</code></pre>
-<p>or:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb14-2" title="2">?<span class="kw">ggplot</span>()</a></code></pre></div>
-</div>
+<div id="operations-and-objects" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Operations and Objects</h1>
+<p>Let’s start by using R as a calculator. On your console type 3 + 3 and hit enter.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="dv">3</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span></a></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+<p>Let’s save our calculation into an object, by using the assignment symbol &lt;-.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">sum_result &lt;-<span class="st"> </span><span class="dv">3</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span></a></code></pre></div>
+<p>We can treat this new object like a number</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="dv">3</span><span class="op">+</span><span class="dv">3</span><span class="op">+</span><span class="dv">3</span></a></code></pre></div>
+<pre><code>## [1] 9</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">sum_result <span class="op">+</span><span class="dv">3</span></a></code></pre></div>
+<pre><code>## [1] 9</code></pre>
+<p style="background-color:DodgerBlue;">
+<p>Look at your global enviroment in the the topright. Your object has been stored to use for the future. Clearing the enviroment will delete all objects in the enviroment.</p>
+</p>
+<p>You can also make a vector that hold multiple numbers. Suppose you need to create a vector of dogs ages for 5 dogs. This can be accomplished in the following code.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1">dogs_age &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">1</span>)</a></code></pre></div>
+<p>Then we can multiply all of the elements of a vector (if all elements are numeric). Below we can see how old each dog is in human years.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1">dogs_human_years &lt;-<span class="st"> </span>dogs_age<span class="op">*</span><span class="st"> </span><span class="dv">7</span></a>
+<a class="sourceLine" id="cb9-2" title="2"></a>
+<a class="sourceLine" id="cb9-3" title="3">dogs_human_years</a></code></pre></div>
+<pre><code>## [1] 35 21 49 14  7</code></pre>
+<div id="challenge" class="section level3">
+<h3><span class="header-section-number">4.0.1</span> <strong>Challenge</strong></h3>
+<p style="background-color:Tomato;">
+Create a vector of peoples jobs experience with 1,4,6,2,3 and 8 years. Let say if everyone starts out making $60,000 and $5,000 for every year of expirence. How much money is each person curently making?
+</p>
 </div>
 </div>
             </section>
@@ -219,8 +229,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="operations-and-objects.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="data-frames.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="intro-to-r-part-i.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="packages.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

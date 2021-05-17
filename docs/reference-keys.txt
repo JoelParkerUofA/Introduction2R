@@ -22,3 +22,13 @@ saving-csv-files.
 creating-data-frames-in-r
 challenge-1
 manipulating-data-frames.
+slicing-a-data-frame
+creating-new-columns
+descriptive-states-in-data-frames.
+challenge-2
+for-loops-and-while-loops.
+if-block
+challenge-3
+creating-functions.
+q-and-a
+installing-r-and-r-studio-1

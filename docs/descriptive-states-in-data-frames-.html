@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Packages | Introduction 2 R</title>
+  <title>Chapter 8 Descriptive States in data frames. | Introduction 2 R</title>
   <meta name="description" content="This is an intro to R workshop." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Packages | Introduction 2 R" />
+  <meta property="og:title" content="Chapter 8 Descriptive States in data frames. | Introduction 2 R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Packages | Introduction 2 R" />
+  <meta name="twitter:title" content="Chapter 8 Descriptive States in data frames. | Introduction 2 R" />
   
   <meta name="twitter:description" content="This is an intro to R workshop." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="operations-and-objects.html"/>
-<link rel="next" href="data-frames.html"/>
+<link rel="prev" href="manipulating-data-frames-.html"/>
+<link rel="next" href="for-loops-and-while-loops-.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -195,23 +195,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="packages" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> Packages</h1>
-<p>One advantage of the R is there is a big communitee of users. The Comrehensive R Archive Network (CRAN) stores packaged bundles of code that allow users to have access to many different functions. Packages are easy to down load and use. For starters lets install the ggplot2 package using install.packages(“Lahman”). Let find out more about the ggplot2 package.</p>
-<div id="help-files" class="section level2">
-<h2><span class="header-section-number">5.1</span> Help files</h2>
-<div id="help-files-for-package" class="section level3">
-<h3><span class="header-section-number">5.1.1</span> Help files for package</h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">help</span>(<span class="dt">package=</span><span class="st">&quot;ggplot2&quot;</span>)</a></code></pre></div>
-</div>
-<div id="help-files-for-funcitons" class="section level3">
-<h3><span class="header-section-number">5.1.2</span> Help files for funcitons</h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1">?ggplot2<span class="op">::</span><span class="kw">ggplot</span>()</a></code></pre></div>
-<pre><code>## starting httpd help server ... done</code></pre>
-<p>or:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb14-2" title="2">?<span class="kw">ggplot</span>()</a></code></pre></div>
-</div>
+<div id="descriptive-states-in-data-frames." class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Descriptive States in data frames.</h1>
+<ul>
+<li><p>mean() - finds the mean of a vector</p></li>
+<li><p>sd() - find the standard deviation</p></li>
+<li><p>median() - finds the median</p></li>
+<li><p>max() - finds the max</p></li>
+<li><p>min() - finds the min</p></li>
+<li><p>range() - returns the range of a vector</p></li>
+<li><p>summary() - give min, 1st quantile, Median, Mean, 3rd Quantile and Max.</p></li>
+</ul>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" title="1"><span class="co"># average hits</span></a>
+<a class="sourceLine" id="cb50-2" title="2"><span class="kw">mean</span>(hits_data_frame<span class="op">$</span>Hits)</a></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" title="1"><span class="co"># standard deviation of hits. </span></a>
+<a class="sourceLine" id="cb52-2" title="2"><span class="kw">sd</span>(hits_data_frame<span class="op">$</span>Hits)</a></code></pre></div>
+<pre><code>## [1] 1.581139</code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" title="1"><span class="co"># median hits</span></a>
+<a class="sourceLine" id="cb54-2" title="2"><span class="kw">median</span>(hits_data_frame<span class="op">$</span>Hits)</a></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" title="1"><span class="co"># max hits</span></a>
+<a class="sourceLine" id="cb56-2" title="2"><span class="kw">max</span>(hits_data_frame<span class="op">$</span>Hits)</a></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" title="1"><span class="co"># range of hits</span></a>
+<a class="sourceLine" id="cb58-2" title="2"></a>
+<a class="sourceLine" id="cb58-3" title="3"><span class="kw">range</span>(hits_data_frame<span class="op">$</span>Hits)</a></code></pre></div>
+<pre><code>## [1] 0 4</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" title="1"><span class="co"># Summary statisitics </span></a>
+<a class="sourceLine" id="cb60-2" title="2"><span class="kw">summary</span>(hits_data_frame<span class="op">$</span>Hits)</a></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##       0       1       2       2       3       4</code></pre>
+<div id="challenge-2" class="section level3">
+<h3><span class="header-section-number">8.0.1</span> <strong>Challenge</strong></h3>
+<p style="background-color:Tomato;">
+Filter the hits_data_frame to to find the person with the highest batting average. Change the playerID “best_player”
+</p>
 </div>
 </div>
             </section>
@@ -219,8 +238,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="operations-and-objects.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="data-frames.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="manipulating-data-frames-.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="for-loops-and-while-loops-.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

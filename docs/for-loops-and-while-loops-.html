@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Packages | Introduction 2 R</title>
+  <title>Chapter 9 For loops and while loops. | Introduction 2 R</title>
   <meta name="description" content="This is an intro to R workshop." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Packages | Introduction 2 R" />
+  <meta property="og:title" content="Chapter 9 For loops and while loops. | Introduction 2 R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Packages | Introduction 2 R" />
+  <meta name="twitter:title" content="Chapter 9 For loops and while loops. | Introduction 2 R" />
   
   <meta name="twitter:description" content="This is an intro to R workshop." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="operations-and-objects.html"/>
-<link rel="next" href="data-frames.html"/>
+<link rel="prev" href="descriptive-states-in-data-frames-.html"/>
+<link rel="next" href="if-block.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -195,32 +195,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="packages" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> Packages</h1>
-<p>One advantage of the R is there is a big communitee of users. The Comrehensive R Archive Network (CRAN) stores packaged bundles of code that allow users to have access to many different functions. Packages are easy to down load and use. For starters lets install the ggplot2 package using install.packages(“Lahman”). Let find out more about the ggplot2 package.</p>
-<div id="help-files" class="section level2">
-<h2><span class="header-section-number">5.1</span> Help files</h2>
-<div id="help-files-for-package" class="section level3">
-<h3><span class="header-section-number">5.1.1</span> Help files for package</h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">help</span>(<span class="dt">package=</span><span class="st">&quot;ggplot2&quot;</span>)</a></code></pre></div>
-</div>
-<div id="help-files-for-funcitons" class="section level3">
-<h3><span class="header-section-number">5.1.2</span> Help files for funcitons</h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1">?ggplot2<span class="op">::</span><span class="kw">ggplot</span>()</a></code></pre></div>
-<pre><code>## starting httpd help server ... done</code></pre>
-<p>or:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb14-2" title="2">?<span class="kw">ggplot</span>()</a></code></pre></div>
-</div>
-</div>
+<div id="for-loops-and-while-loops." class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> For loops and while loops.</h1>
+<p>Many times we want to loop though the data for perform opperations. For this we can use for loops.</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" title="1"><span class="cf">for</span>(player <span class="cf">in</span> hits_data_frame<span class="op">$</span>PlayerID){</a>
+<a class="sourceLine" id="cb62-2" title="2">  </a>
+<a class="sourceLine" id="cb62-3" title="3">  <span class="co"># Print player name with a little introduction</span></a>
+<a class="sourceLine" id="cb62-4" title="4">  <span class="kw">print</span>(<span class="kw">paste0</span>(<span class="st">&quot;Player Name: &quot;</span> , player))</a>
+<a class="sourceLine" id="cb62-5" title="5"></a>
+<a class="sourceLine" id="cb62-6" title="6">  </a>
+<a class="sourceLine" id="cb62-7" title="7">  }</a></code></pre></div>
+<pre><code>## [1] &quot;Player Name: Player01&quot;
+## [1] &quot;Player Name: Player02&quot;
+## [1] &quot;Player Name: Player03&quot;
+## [1] &quot;Player Name: PlayerNew&quot;
+## [1] &quot;Player Name: Player05&quot;</code></pre>
+<p>We can also do this using a while loop. A while loop continues until a certain contiditon is met.</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" title="1"><span class="co">## Create count variable that will be updated each time through</span></a>
+<a class="sourceLine" id="cb64-2" title="2">count =<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb64-3" title="3"></a>
+<a class="sourceLine" id="cb64-4" title="4"><span class="co">## find amount of rows in the data frame. </span></a>
+<a class="sourceLine" id="cb64-5" title="5">row_count &lt;-<span class="st"> </span><span class="kw">nrow</span>(hits_data_frame)</a>
+<a class="sourceLine" id="cb64-6" title="6"></a>
+<a class="sourceLine" id="cb64-7" title="7"></a>
+<a class="sourceLine" id="cb64-8" title="8"><span class="cf">while</span>(count <span class="op">&lt;=</span><span class="st"> </span>row_count){</a>
+<a class="sourceLine" id="cb64-9" title="9">  </a>
+<a class="sourceLine" id="cb64-10" title="10">  <span class="co"># Print player name with a little introduction</span></a>
+<a class="sourceLine" id="cb64-11" title="11">  <span class="kw">print</span>(<span class="kw">paste0</span>(<span class="st">&quot;Player Name: &quot;</span>, hits_data_frame<span class="op">$</span>PlayerID[count]))</a>
+<a class="sourceLine" id="cb64-12" title="12">  </a>
+<a class="sourceLine" id="cb64-13" title="13">  </a>
+<a class="sourceLine" id="cb64-14" title="14">  <span class="co"># Update count</span></a>
+<a class="sourceLine" id="cb64-15" title="15">  count =<span class="st"> </span>count<span class="op">+</span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb64-16" title="16">  </a>
+<a class="sourceLine" id="cb64-17" title="17">}</a></code></pre></div>
+<pre><code>## [1] &quot;Player Name: Player01&quot;
+## [1] &quot;Player Name: Player02&quot;
+## [1] &quot;Player Name: Player03&quot;
+## [1] &quot;Player Name: PlayerNew&quot;
+## [1] &quot;Player Name: Player05&quot;</code></pre>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="operations-and-objects.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="data-frames.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="descriptive-states-in-data-frames-.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="if-block.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
