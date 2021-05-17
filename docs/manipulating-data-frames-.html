@@ -24,7 +24,7 @@
 <meta name="author" content="Joel Parker" />
 
 
-<meta name="date" content="2021-05-16" />
+<meta name="date" content="2021-05-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -205,8 +205,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>full data frame</li>
 </ul>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="co"># dataframe[rows, columns]</span></a>
-<a class="sourceLine" id="cb21-2" title="2"></a>
-<a class="sourceLine" id="cb21-3" title="3">hits_data_frame</a></code></pre></div>
+<a class="sourceLine" id="cb21-2" title="2">hits_data_frame</a></code></pre></div>
 <pre><code>##   PlayerID Hits AtBats
 ## 1 Player01    3      4
 ## 2 Player02    1      4
@@ -221,16 +220,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 3 Player03    0      3
 ## 4 Player04    2      5
 ## 5 Player05    4      4</code></pre>
-<p style="background-color:Dodgerblue;">
-Note: If we dont specify which rows or columns we want we get the whole data frame back.
-</p>
+<p>Note: If we dont specify which rows or columns we want we get the whole data frame back.</p>
 <ul>
 <li>Second row</li>
 </ul>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1"><span class="co"># dataframe[rows, columns]</span></a>
-<a class="sourceLine" id="cb25-2" title="2"></a>
-<a class="sourceLine" id="cb25-3" title="3"></a>
-<a class="sourceLine" id="cb25-4" title="4">hits_data_frame[<span class="dv">2</span>,]</a></code></pre></div>
+<a class="sourceLine" id="cb25-2" title="2">hits_data_frame[<span class="dv">2</span>,]</a></code></pre></div>
 <pre><code>##   PlayerID Hits AtBats
 ## 2 Player02    1      4</code></pre>
 <ul>
@@ -260,25 +255,20 @@ Note: If we dont specify which rows or columns we want we get the whole data fra
 ## 5    4 Player05</code></pre>
 <p>You can also use the $ sign to specify columns</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1"><span class="co"># get player ID column</span></a>
-<a class="sourceLine" id="cb37-2" title="2"></a>
-<a class="sourceLine" id="cb37-3" title="3">hits_data_frame<span class="op">$</span>PlayerID</a></code></pre></div>
+<a class="sourceLine" id="cb37-2" title="2">hits_data_frame<span class="op">$</span>PlayerID</a></code></pre></div>
 <pre><code>## [1] &quot;Player01&quot; &quot;Player02&quot; &quot;Player03&quot; &quot;Player04&quot; &quot;Player05&quot;</code></pre>
 <p>In the case the column is treated as a vector which can be manipulated.</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" title="1"><span class="co">## select 4th player</span></a>
-<a class="sourceLine" id="cb39-2" title="2"></a>
-<a class="sourceLine" id="cb39-3" title="3">hits_data_frame<span class="op">$</span>PlayerID[<span class="dv">4</span>]</a></code></pre></div>
+<a class="sourceLine" id="cb39-2" title="2">hits_data_frame<span class="op">$</span>PlayerID[<span class="dv">4</span>]</a></code></pre></div>
 <pre><code>## [1] &quot;Player04&quot;</code></pre>
 <p>We can also assign a new value here.</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" title="1"><span class="co">## Changing value of a sliced data frame. </span></a>
-<a class="sourceLine" id="cb41-2" title="2"></a>
-<a class="sourceLine" id="cb41-3" title="3">hits_data_frame<span class="op">$</span>PlayerID[<span class="dv">4</span>] &lt;-<span class="st"> &quot;PlayerNew&quot;</span></a>
-<a class="sourceLine" id="cb41-4" title="4"></a>
-<a class="sourceLine" id="cb41-5" title="5">hits_data_frame<span class="op">$</span>PlayerID[<span class="dv">4</span>]</a></code></pre></div>
+<a class="sourceLine" id="cb41-2" title="2">hits_data_frame<span class="op">$</span>PlayerID[<span class="dv">4</span>] &lt;-<span class="st"> &quot;PlayerNew&quot;</span></a>
+<a class="sourceLine" id="cb41-3" title="3">hits_data_frame<span class="op">$</span>PlayerID[<span class="dv">4</span>]</a></code></pre></div>
 <pre><code>## [1] &quot;PlayerNew&quot;</code></pre>
 <p>Operations can also be also be completed in the brackets to help filter data</p>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" title="1"><span class="co">## Filtering with which()</span></a>
-<a class="sourceLine" id="cb43-2" title="2"></a>
-<a class="sourceLine" id="cb43-3" title="3"><span class="kw">which</span>(hits_data_frame<span class="op">$</span>PlayerID <span class="op">==</span><span class="st"> &quot;PlayerNew&quot;</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb43-2" title="2"><span class="kw">which</span>(hits_data_frame<span class="op">$</span>PlayerID <span class="op">==</span><span class="st"> &quot;PlayerNew&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 <p>what this means is player new is the 4th observation. We can filter the whole data frame with.</p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" title="1"><span class="co"># Hits filtered</span></a>
@@ -290,15 +280,10 @@ Note: If we dont specify which rows or columns we want we get the whole data fra
 <h2><span class="header-section-number">7.2</span> Creating new columns</h2>
 <p>you can create new columns with mathematical operations like <span class="math inline">\(+\)</span>,<span class="math inline">\(-\)</span>,<span class="math inline">\(/\)</span> and <span class="math inline">\(*\)</span></p>
 <div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" title="1"><span class="co">### Create new columns with / dividing</span></a>
-<a class="sourceLine" id="cb47-2" title="2"></a>
-<a class="sourceLine" id="cb47-3" title="3">hits_data_frame<span class="op">$</span>batting_average &lt;-<span class="st"> </span>hits_data_frame<span class="op">$</span>Hits <span class="op">/</span><span class="st"> </span>hits_data_frame<span class="op">$</span>AtBats</a>
-<a class="sourceLine" id="cb47-4" title="4"></a>
-<a class="sourceLine" id="cb47-5" title="5"></a>
-<a class="sourceLine" id="cb47-6" title="6"><span class="co">### Create new columns with - subtracting</span></a>
-<a class="sourceLine" id="cb47-7" title="7">hits_data_frame<span class="op">$</span>outs &lt;-<span class="st"> </span>hits_data_frame<span class="op">$</span>AtBats <span class="op">-</span><span class="st"> </span>hits_data_frame<span class="op">$</span>Hits</a>
-<a class="sourceLine" id="cb47-8" title="8"></a>
-<a class="sourceLine" id="cb47-9" title="9"></a>
-<a class="sourceLine" id="cb47-10" title="10">hits_data_frame</a></code></pre></div>
+<a class="sourceLine" id="cb47-2" title="2">hits_data_frame<span class="op">$</span>batting_average &lt;-<span class="st"> </span>hits_data_frame<span class="op">$</span>Hits <span class="op">/</span><span class="st"> </span>hits_data_frame<span class="op">$</span>AtBats</a>
+<a class="sourceLine" id="cb47-3" title="3"><span class="co">### Create new columns with - subtracting</span></a>
+<a class="sourceLine" id="cb47-4" title="4">hits_data_frame<span class="op">$</span>outs &lt;-<span class="st"> </span>hits_data_frame<span class="op">$</span>AtBats <span class="op">-</span><span class="st"> </span>hits_data_frame<span class="op">$</span>Hits</a>
+<a class="sourceLine" id="cb47-5" title="5">hits_data_frame</a></code></pre></div>
 <pre><code>##    PlayerID Hits AtBats batting_average outs
 ## 1  Player01    3      4            0.75    1
 ## 2  Player02    1      4            0.25    3

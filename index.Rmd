@@ -36,7 +36,6 @@ packages like ggplot allow users to create high quality graphics like the one be
 library(ggplot2)
 library(Lahman)
 data(Teams)
-
 ## filter data to just Cubs and Indians since both were playing, in 1901
 ## Teams didn't play the same number of games each year, so rescale
 ## Use team names instead of codes, and clean up unused teams
@@ -48,12 +47,6 @@ Teams %>%
  mutate(Team = fct_drop(fct_recode(franchID, Cardinals = "STL", Dodgers = "LAD", Twins = "MIN"))) %>%
  mutate(RunsPerGame = R / G) %>%
  mutate(HitsPerGame = HA / G) -> CardsDodg.team
-
-
-
-
-
-
   ggplot(data = CardsDodg.team, aes(yearID,RunsPerGame)) +
   theme_bw()+
     geom_point(aes(color =Team)) +
@@ -63,16 +56,6 @@ Teams %>%
     ggtitle("Runs per Game") +
     theme(plot.title = element_text(hjust = 0.5)) +
     scale_color_manual(values =  c("blue","darkgreen","red"))
-
-
-
-
-
-
-
-
-
-
 ```
 
 
@@ -124,24 +107,19 @@ In this part of the workshop we will start an R project and situating ourselves 
 # Operations and Objects
 Let’s start by using R as a calculator. On your console type 3 + 3 and hit enter.
 ```{r}
-
 3 + 3
 ```
 
 Let’s save our calculation into an object, by using the assignment symbol <-.
 ```{r}
 sum_result <- 3 + 3
-
 ```
 
 
 We can treat this new object like a number
 ```{r}
 3+3+3
-
-
 sum_result +3
-
 ```
 
 <p style="background-color:DodgerBlue;">
@@ -153,7 +131,6 @@ Look at your global enviroment in the the topright. Your object has been stored 
 You can also make a vector that hold multiple numbers. Suppose you need to create a vector of dogs ages for 5 dogs. This can be accomplished in the following code. 
 ```{r}
 dogs_age <- c(5,3,7,2,1)
-
 ```
 
 
@@ -161,9 +138,7 @@ Then we can multiply all of the elements of a vector (if all elements are numeri
 
 ```{r}
 dogs_human_years <- dogs_age* 7
-
 dogs_human_years
-
 ```
 
 
@@ -176,28 +151,25 @@ Create a vector of peoples jobs experience with 1,4,6,2,3 and 8 years. Let say i
 </p>
 
 # Packages
-One advantage of the R is there is a big communitee of users. The Comrehensive R Archive Network (CRAN) stores packaged bundles of code that allow users to have access to many different functions. Packages are easy to down load and use. For starters lets install the ggplot2 package using install.packages("Lahman"). Let find out more about the ggplot2 package.
+One advantage of the R is there is a big communitee of users. The Comrehensive R Archive Network (CRAN) stores packaged bundles of code that allow users to have access to many different functions. Packages are easy to down load and use. For starters lets install the ggplot2 package using install.packages("ggplot2"). Let find out more about the ggplot2 package.
 
 ## Help files
 
 ### Help files for package
 ```{r}
 help(package="ggplot2")
-
 ```
 
 
 ### Help files for funcitons
 ```{r}
 ?ggplot2::ggplot()
-
 ```
 
 or:
 ```{r}
 library(ggplot2)
 ?ggplot()
-
 ```
 
 # Data Frames
@@ -208,14 +180,10 @@ For this workshop we will be working with data from the Lahmen data base. This c
 
 ```{r}
 #install.packages("Lahmen")
-
 library(Lahman)
-
 data(Batting)
-
 # Allows you to see the first 6 hitters
 head(Batting)
-
 ```
 
 
@@ -223,7 +191,6 @@ head(Batting)
 First you want to find your directory. 
 ```{r}
 getwd()
-
 ```
 
 When you save a file it will be saved to this directory. You can save a csv file with the following code. 
@@ -231,8 +198,13 @@ When you save a file it will be saved to this directory. You can save a csv file
 
 You can save a csv file with the following code. 
 ```{r}
+
+## Save CSV File
 write.csv(Batting, "battingexample.csv")
 
+
+# in data frame
+Batting <- read.csv("battingexample.csv")
 ```
 
 
@@ -242,28 +214,22 @@ You can also create data frames within R. Here we are creating a data frame with
 
 ```{r}
 # create player 
-
 player <- c("Player01", "Player02", "Player03", "Player04","Player05")
-
 # Create Vector of Hits
 hits <- c(3,1,0,2,4)
-
-
 # Create Vector of At Bats
 at_bats <- c(4,4,3,5,4)
-
 # Create full data frame
 hits_data_frame <- data.frame(PlayerID = player,
                                  Hits=hits,
                                  AtBats = at_bats)
-
 hits_data_frame
 ```
 
 
-<p style="background-color:Dodgerblue;">
+
 Note: Every vector used in the data frame must be of equal length.
-</p>
+
 
 
 ### Challenge
@@ -285,50 +251,38 @@ We may intersted in looking at just 1 column or 1 row. We can do this with by sp
 * full data frame
 ```{r}
 # dataframe[rows, columns]
-
 hits_data_frame
-
 ```
 
 
 ```{r}
 # dataframe[rows, columns]
 hits_data_frame[,]
-
 ```
 
-<p style="background-color:Dodgerblue;">
+
 Note: If we dont specify which rows or columns we want we get the whole data frame back.
-</p>
 
 
 
 * Second row
 ```{r}
 # dataframe[rows, columns]
-
-
 hits_data_frame[2,]
-
 ```
 
 
 
 * second column 
 ```{r}
-
 hits_data_frame[,2]
-
 ```
 
 
 
 * Second row of the second column
 ```{r}
-
 hits_data_frame[2,2]
-
-
 ```
 
 
@@ -337,24 +291,18 @@ We can also use column names to slice data: \newline
 First lets get the names of the columns in the data frame. 
 
 ```{r}
-
 names(hits_data_frame)
-
 ```
 
 Now we can use these column names to select the hits columns. 
 
 ```{r}
-
 hits_data_frame[,c("Hits")]
-
 ```
 
 We can pass a vector of column names if we want more than 1 column. 
 ```{r}
-
 hits_data_frame[,c("Hits","PlayerID")]
-
 ```
 
 
@@ -364,9 +312,7 @@ You can also use the $ sign to specify columns
 
 ```{r}
 # get player ID column
-
 hits_data_frame$PlayerID
-
 ```
 
 In the case the column is treated as a vector which can be manipulated. 
@@ -374,20 +320,15 @@ In the case the column is treated as a vector which can be manipulated.
 
 ```{r}
 ## select 4th player
-
 hits_data_frame$PlayerID[4]
-
 ```
 
 
 We can also assign a new value here. 
 ```{r}
 ## Changing value of a sliced data frame. 
-
 hits_data_frame$PlayerID[4] <- "PlayerNew"
-
 hits_data_frame$PlayerID[4]
-
 ```
 
 
@@ -395,20 +336,15 @@ hits_data_frame$PlayerID[4]
 Operations can also be also be completed in the brackets to help filter data
 
 ```{r}
-
 ## Filtering with which()
-
 which(hits_data_frame$PlayerID == "PlayerNew")
 ```
 
 what this means is player new is the 4th observation. We can filter the whole data frame with. 
 
 ```{r}
-
 # Hits filtered
 hits_data_frame[which(hits_data_frame$PlayerID == "PlayerNew"),]
-
-
 ```
 
 
@@ -417,19 +353,11 @@ hits_data_frame[which(hits_data_frame$PlayerID == "PlayerNew"),]
 you can create new columns with mathematical operations like $+$,$-$,$/$ and $*$
 
 ```{r}
-
 ### Create new columns with / dividing
-
 hits_data_frame$batting_average <- hits_data_frame$Hits / hits_data_frame$AtBats
-
-
 ### Create new columns with - subtracting
 hits_data_frame$outs <- hits_data_frame$AtBats - hits_data_frame$Hits
-
-
 hits_data_frame
-
-
 ```
 
 
@@ -451,29 +379,16 @@ hits_data_frame
 * summary() - give min, 1st quantile, Median, Mean, 3rd Quantile and Max.
 
 ```{r}
-
 # average hits
 mean(hits_data_frame$Hits)
-
 # standard deviation of hits. 
 sd(hits_data_frame$Hits)
-
-
-
 # median hits
 median(hits_data_frame$Hits)
-
-
 # max hits
 max(hits_data_frame$Hits)
-
-
-
 # range of hits
-
 range(hits_data_frame$Hits)
-
-
 # Summary statisitics 
 summary(hits_data_frame$Hits)
 ```
@@ -493,30 +408,22 @@ Filter the hits_data_frame to to find the person with the highest batting averag
 Many times we want to loop though the data for perform opperations. For this we can use for loops. 
 
 ```{r}
-
 for(player in hits_data_frame$PlayerID){
   
   # Print player name with a little introduction
   print(paste0("Player Name: " , player))
-
   
   }
-
-
 ```
 
 
 We can also do this using a while loop. A while loop continues until a certain contiditon is met.  
 
 ```{r}
-
 ## Create count variable that will be updated each time through
 count = 1
-
 ## find amount of rows in the data frame. 
 row_count <- nrow(hits_data_frame)
-
-
 while(count <= row_count){
   
   # Print player name with a little introduction
@@ -527,7 +434,6 @@ while(count <= row_count){
   count = count+1
   
 }
-
 ```
 
 
@@ -537,11 +443,7 @@ while(count <= row_count){
 When creating a new column we may want the values of the column to be different depending on some condition. We can do this with an if block. 
 
 ```{r}
-
-
-
 ## We will be creating a player type variabe that shows they are "bad" if batting average < 0.25, good if below 0.75 and great if greater than or equal to 0.75
-
 # Create for loop to look at each player separatly
 for(i in 1:nrow(hits_data_frame)){
   
@@ -574,19 +476,14 @@ for(i in 1:nrow(hits_data_frame)){
   
   
 }
-
-
 hits_data_frame
-
 ```
 
 
 you can use the table function to see how many of each type of player you have. 
 
 ```{r}
-
 table(hits_data_frame$player_type)
-
 ```
 
 
@@ -605,9 +502,7 @@ Functions are use full when you want to reuse steps to complete a process. \newl
 In this example we are going to create a function that returns the amount the batting average based on at-bats and hits. 
 
 ```{r}
-
 # Create get-average function
-
 ## inside the () you must define the input
 get_average <- function(at_bats, hits ){
   
@@ -629,15 +524,12 @@ get_average <- function(at_bats, hits ){
   return(average)
   
 }
-
 ```
 
 
 
 ```{r}
-
 get_average(172,41)
-
 ```
 
 
@@ -645,8 +537,4 @@ get_average(172,41)
 
 # Q and A
 Please think about why you came to this workshop and what you were hoping to get out of it. What are you planning to use R for in the future? Lets have an open discussion about new topics we may have not disscussed yet. 
-
-
-
-
 

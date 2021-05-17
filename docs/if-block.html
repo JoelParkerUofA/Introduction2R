@@ -24,7 +24,7 @@
 <meta name="author" content="Joel Parker" />
 
 
-<meta name="date" content="2021-05-16" />
+<meta name="date" content="2021-05-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -199,42 +199,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 10</span> If block</h1>
 <p>When creating a new column we may want the values of the column to be different depending on some condition. We can do this with an if block.</p>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" title="1"><span class="co">## We will be creating a player type variabe that shows they are &quot;bad&quot; if batting average &lt; 0.25, good if below 0.75 and great if greater than or equal to 0.75</span></a>
-<a class="sourceLine" id="cb65-2" title="2"></a>
-<a class="sourceLine" id="cb65-3" title="3"><span class="co"># Create for loop to look at each player separatly</span></a>
-<a class="sourceLine" id="cb65-4" title="4"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(hits_data_frame)){</a>
+<a class="sourceLine" id="cb65-2" title="2"><span class="co"># Create for loop to look at each player separatly</span></a>
+<a class="sourceLine" id="cb65-3" title="3"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(hits_data_frame)){</a>
+<a class="sourceLine" id="cb65-4" title="4">  </a>
 <a class="sourceLine" id="cb65-5" title="5">  </a>
-<a class="sourceLine" id="cb65-6" title="6">  </a>
-<a class="sourceLine" id="cb65-7" title="7">  <span class="co">## isolate player</span></a>
-<a class="sourceLine" id="cb65-8" title="8">  player_average &lt;-<span class="st"> </span>hits_data_frame<span class="op">$</span>batting_average[i]</a>
+<a class="sourceLine" id="cb65-6" title="6">  <span class="co">## isolate player</span></a>
+<a class="sourceLine" id="cb65-7" title="7">  player_average &lt;-<span class="st"> </span>hits_data_frame<span class="op">$</span>batting_average[i]</a>
+<a class="sourceLine" id="cb65-8" title="8">  </a>
 <a class="sourceLine" id="cb65-9" title="9">  </a>
-<a class="sourceLine" id="cb65-10" title="10">  </a>
-<a class="sourceLine" id="cb65-11" title="11">  <span class="co">## bad condition </span></a>
-<a class="sourceLine" id="cb65-12" title="12">  <span class="cf">if</span>(player_average <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.25</span>){</a>
-<a class="sourceLine" id="cb65-13" title="13">    </a>
-<a class="sourceLine" id="cb65-14" title="14">    <span class="co">## Assign new bad value to new variable</span></a>
-<a class="sourceLine" id="cb65-15" title="15">    hits_data_frame<span class="op">$</span>player_type[i] &lt;-<span class="st"> &quot;bad&quot;</span> </a>
-<a class="sourceLine" id="cb65-16" title="16">    </a>
-<a class="sourceLine" id="cb65-17" title="17">  }</a>
-<a class="sourceLine" id="cb65-18" title="18">  </a>
-<a class="sourceLine" id="cb65-19" title="19">  <span class="co">## Assign new good value to new variable</span></a>
-<a class="sourceLine" id="cb65-20" title="20">  <span class="cf">if</span>(player_average <span class="op">&gt;=</span><span class="st"> </span><span class="fl">0.25</span> <span class="op">&amp;</span><span class="st">  </span>player_average<span class="op">&lt;</span><span class="fl">0.75</span>){</a>
-<a class="sourceLine" id="cb65-21" title="21">    </a>
-<a class="sourceLine" id="cb65-22" title="22">      hits_data_frame<span class="op">$</span>player_type[i] &lt;-<span class="st"> &quot;good&quot;</span> </a>
-<a class="sourceLine" id="cb65-23" title="23">  }</a>
-<a class="sourceLine" id="cb65-24" title="24">  </a>
-<a class="sourceLine" id="cb65-25" title="25">  <span class="co">## Assign great value to new value</span></a>
-<a class="sourceLine" id="cb65-26" title="26">    <span class="cf">if</span>(player_average<span class="op">&gt;=</span><span class="fl">0.75</span>){</a>
-<a class="sourceLine" id="cb65-27" title="27">    </a>
-<a class="sourceLine" id="cb65-28" title="28">      hits_data_frame<span class="op">$</span>player_type[i] &lt;-<span class="st"> &quot;great&quot;</span> </a>
-<a class="sourceLine" id="cb65-29" title="29">  }</a>
+<a class="sourceLine" id="cb65-10" title="10">  <span class="co">## bad condition </span></a>
+<a class="sourceLine" id="cb65-11" title="11">  <span class="cf">if</span>(player_average <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.25</span>){</a>
+<a class="sourceLine" id="cb65-12" title="12">    </a>
+<a class="sourceLine" id="cb65-13" title="13">    <span class="co">## Assign new bad value to new variable</span></a>
+<a class="sourceLine" id="cb65-14" title="14">    hits_data_frame<span class="op">$</span>player_type[i] &lt;-<span class="st"> &quot;bad&quot;</span> </a>
+<a class="sourceLine" id="cb65-15" title="15">    </a>
+<a class="sourceLine" id="cb65-16" title="16">  }</a>
+<a class="sourceLine" id="cb65-17" title="17">  </a>
+<a class="sourceLine" id="cb65-18" title="18">  <span class="co">## Assign new good value to new variable</span></a>
+<a class="sourceLine" id="cb65-19" title="19">  <span class="cf">if</span>(player_average <span class="op">&gt;=</span><span class="st"> </span><span class="fl">0.25</span> <span class="op">&amp;</span><span class="st">  </span>player_average<span class="op">&lt;</span><span class="fl">0.75</span>){</a>
+<a class="sourceLine" id="cb65-20" title="20">    </a>
+<a class="sourceLine" id="cb65-21" title="21">      hits_data_frame<span class="op">$</span>player_type[i] &lt;-<span class="st"> &quot;good&quot;</span> </a>
+<a class="sourceLine" id="cb65-22" title="22">  }</a>
+<a class="sourceLine" id="cb65-23" title="23">  </a>
+<a class="sourceLine" id="cb65-24" title="24">  <span class="co">## Assign great value to new value</span></a>
+<a class="sourceLine" id="cb65-25" title="25">    <span class="cf">if</span>(player_average<span class="op">&gt;=</span><span class="fl">0.75</span>){</a>
+<a class="sourceLine" id="cb65-26" title="26">    </a>
+<a class="sourceLine" id="cb65-27" title="27">      hits_data_frame<span class="op">$</span>player_type[i] &lt;-<span class="st"> &quot;great&quot;</span> </a>
+<a class="sourceLine" id="cb65-28" title="28">  }</a>
+<a class="sourceLine" id="cb65-29" title="29">  </a>
 <a class="sourceLine" id="cb65-30" title="30">  </a>
 <a class="sourceLine" id="cb65-31" title="31">  </a>
 <a class="sourceLine" id="cb65-32" title="32">  </a>
-<a class="sourceLine" id="cb65-33" title="33">  </a>
-<a class="sourceLine" id="cb65-34" title="34">}</a>
-<a class="sourceLine" id="cb65-35" title="35"></a>
-<a class="sourceLine" id="cb65-36" title="36"></a>
-<a class="sourceLine" id="cb65-37" title="37">hits_data_frame</a></code></pre></div>
+<a class="sourceLine" id="cb65-33" title="33">}</a>
+<a class="sourceLine" id="cb65-34" title="34">hits_data_frame</a></code></pre></div>
 <pre><code>##    PlayerID Hits AtBats batting_average outs player_type
 ## 1  Player01    3      4            0.75    1       great
 ## 2  Player02    1      4            0.25    3        good

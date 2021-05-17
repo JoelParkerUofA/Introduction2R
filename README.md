@@ -1,7 +1,7 @@
 
 tags: ResBaz2021
 ---
-# Intro to R 1
+# Intro to R 2
 Monday, May 17th, 2021 10\:00-12\:00
 # 
 

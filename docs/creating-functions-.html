@@ -24,7 +24,7 @@
 <meta name="author" content="Joel Parker" />
 
 
-<meta name="date" content="2021-05-16" />
+<meta name="date" content="2021-05-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -200,28 +200,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Functions are use full when you want to reuse steps to complete a process. </p>
 <p>In this example we are going to create a function that returns the amount the batting average based on at-bats and hits.</p>
 <div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" title="1"><span class="co"># Create get-average function</span></a>
-<a class="sourceLine" id="cb69-2" title="2"></a>
-<a class="sourceLine" id="cb69-3" title="3"><span class="co">## inside the () you must define the input</span></a>
-<a class="sourceLine" id="cb69-4" title="4">get_average &lt;-<span class="st"> </span><span class="cf">function</span>(at_bats, hits ){</a>
+<a class="sourceLine" id="cb69-2" title="2"><span class="co">## inside the () you must define the input</span></a>
+<a class="sourceLine" id="cb69-3" title="3">get_average &lt;-<span class="st"> </span><span class="cf">function</span>(at_bats, hits ){</a>
+<a class="sourceLine" id="cb69-4" title="4">  </a>
 <a class="sourceLine" id="cb69-5" title="5">  </a>
-<a class="sourceLine" id="cb69-6" title="6">  </a>
-<a class="sourceLine" id="cb69-7" title="7">  <span class="co"># Create the situation where the player has not had any at-bats. We can not calculate average since we are divding by 0</span></a>
-<a class="sourceLine" id="cb69-8" title="8">  <span class="cf">if</span>(at_bats<span class="op">==</span><span class="dv">0</span>){</a>
-<a class="sourceLine" id="cb69-9" title="9">    </a>
-<a class="sourceLine" id="cb69-10" title="10">    average=<span class="st"> </span><span class="ot">NA</span></a>
-<a class="sourceLine" id="cb69-11" title="11">  }</a>
-<a class="sourceLine" id="cb69-12" title="12">  </a>
-<a class="sourceLine" id="cb69-13" title="13">  <span class="co">## Create batting average</span></a>
-<a class="sourceLine" id="cb69-14" title="14">  <span class="cf">if</span>(at_bats<span class="op">&gt;</span><span class="dv">0</span>){</a>
-<a class="sourceLine" id="cb69-15" title="15">    </a>
-<a class="sourceLine" id="cb69-16" title="16">    average =<span class="st"> </span>hits<span class="op">/</span>at_bats</a>
-<a class="sourceLine" id="cb69-17" title="17">  }</a>
+<a class="sourceLine" id="cb69-6" title="6">  <span class="co"># Create the situation where the player has not had any at-bats. We can not calculate average since we are divding by 0</span></a>
+<a class="sourceLine" id="cb69-7" title="7">  <span class="cf">if</span>(at_bats<span class="op">==</span><span class="dv">0</span>){</a>
+<a class="sourceLine" id="cb69-8" title="8">    </a>
+<a class="sourceLine" id="cb69-9" title="9">    average=<span class="st"> </span><span class="ot">NA</span></a>
+<a class="sourceLine" id="cb69-10" title="10">  }</a>
+<a class="sourceLine" id="cb69-11" title="11">  </a>
+<a class="sourceLine" id="cb69-12" title="12">  <span class="co">## Create batting average</span></a>
+<a class="sourceLine" id="cb69-13" title="13">  <span class="cf">if</span>(at_bats<span class="op">&gt;</span><span class="dv">0</span>){</a>
+<a class="sourceLine" id="cb69-14" title="14">    </a>
+<a class="sourceLine" id="cb69-15" title="15">    average =<span class="st"> </span>hits<span class="op">/</span>at_bats</a>
+<a class="sourceLine" id="cb69-16" title="16">  }</a>
+<a class="sourceLine" id="cb69-17" title="17">  </a>
 <a class="sourceLine" id="cb69-18" title="18">  </a>
-<a class="sourceLine" id="cb69-19" title="19">  </a>
-<a class="sourceLine" id="cb69-20" title="20">  <span class="co">### use the return() function to define output. </span></a>
-<a class="sourceLine" id="cb69-21" title="21">  <span class="kw">return</span>(average)</a>
-<a class="sourceLine" id="cb69-22" title="22">  </a>
-<a class="sourceLine" id="cb69-23" title="23">}</a></code></pre></div>
+<a class="sourceLine" id="cb69-19" title="19">  <span class="co">### use the return() function to define output. </span></a>
+<a class="sourceLine" id="cb69-20" title="20">  <span class="kw">return</span>(average)</a>
+<a class="sourceLine" id="cb69-21" title="21">  </a>
+<a class="sourceLine" id="cb69-22" title="22">}</a></code></pre></div>
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" title="1"><span class="kw">get_average</span>(<span class="dv">172</span>,<span class="dv">41</span>)</a></code></pre></div>
 <pre><code>## [1] 0.2383721</code></pre>
 </div>
