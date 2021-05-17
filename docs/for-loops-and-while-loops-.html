@@ -198,36 +198,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="for-loops-and-while-loops." class="section level1">
 <h1><span class="header-section-number">Chapter 9</span> For loops and while loops.</h1>
 <p>Many times we want to loop though the data for perform opperations. For this we can use for loops.</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" title="1"><span class="cf">for</span>(player <span class="cf">in</span> hits_data_frame<span class="op">$</span>PlayerID){</a>
-<a class="sourceLine" id="cb62-2" title="2">  </a>
-<a class="sourceLine" id="cb62-3" title="3">  <span class="co"># Print player name with a little introduction</span></a>
-<a class="sourceLine" id="cb62-4" title="4">  <span class="kw">print</span>(<span class="kw">paste0</span>(<span class="st">&quot;Player Name: &quot;</span> , player))</a>
-<a class="sourceLine" id="cb62-5" title="5"></a>
-<a class="sourceLine" id="cb62-6" title="6">  </a>
-<a class="sourceLine" id="cb62-7" title="7">  }</a></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" title="1"><span class="cf">for</span>(player <span class="cf">in</span> hits_data_frame<span class="op">$</span>PlayerID){</a>
+<a class="sourceLine" id="cb61-2" title="2">  </a>
+<a class="sourceLine" id="cb61-3" title="3">  <span class="co"># Print player name with a little introduction</span></a>
+<a class="sourceLine" id="cb61-4" title="4">  <span class="kw">print</span>(<span class="kw">paste0</span>(<span class="st">&quot;Player Name: &quot;</span> , player))</a>
+<a class="sourceLine" id="cb61-5" title="5"></a>
+<a class="sourceLine" id="cb61-6" title="6">  </a>
+<a class="sourceLine" id="cb61-7" title="7">  }</a></code></pre></div>
 <pre><code>## [1] &quot;Player Name: Player01&quot;
 ## [1] &quot;Player Name: Player02&quot;
 ## [1] &quot;Player Name: Player03&quot;
 ## [1] &quot;Player Name: PlayerNew&quot;
 ## [1] &quot;Player Name: Player05&quot;</code></pre>
 <p>We can also do this using a while loop. A while loop continues until a certain contiditon is met.</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" title="1"><span class="co">## Create count variable that will be updated each time through</span></a>
-<a class="sourceLine" id="cb64-2" title="2">count =<span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb64-3" title="3"></a>
-<a class="sourceLine" id="cb64-4" title="4"><span class="co">## find amount of rows in the data frame. </span></a>
-<a class="sourceLine" id="cb64-5" title="5">row_count &lt;-<span class="st"> </span><span class="kw">nrow</span>(hits_data_frame)</a>
-<a class="sourceLine" id="cb64-6" title="6"></a>
-<a class="sourceLine" id="cb64-7" title="7"></a>
-<a class="sourceLine" id="cb64-8" title="8"><span class="cf">while</span>(count <span class="op">&lt;=</span><span class="st"> </span>row_count){</a>
-<a class="sourceLine" id="cb64-9" title="9">  </a>
-<a class="sourceLine" id="cb64-10" title="10">  <span class="co"># Print player name with a little introduction</span></a>
-<a class="sourceLine" id="cb64-11" title="11">  <span class="kw">print</span>(<span class="kw">paste0</span>(<span class="st">&quot;Player Name: &quot;</span>, hits_data_frame<span class="op">$</span>PlayerID[count]))</a>
-<a class="sourceLine" id="cb64-12" title="12">  </a>
-<a class="sourceLine" id="cb64-13" title="13">  </a>
-<a class="sourceLine" id="cb64-14" title="14">  <span class="co"># Update count</span></a>
-<a class="sourceLine" id="cb64-15" title="15">  count =<span class="st"> </span>count<span class="op">+</span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb64-16" title="16">  </a>
-<a class="sourceLine" id="cb64-17" title="17">}</a></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" title="1"><span class="co">## Create count variable that will be updated each time through</span></a>
+<a class="sourceLine" id="cb63-2" title="2">count =<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb63-3" title="3"></a>
+<a class="sourceLine" id="cb63-4" title="4"><span class="co">## find amount of rows in the data frame. </span></a>
+<a class="sourceLine" id="cb63-5" title="5">row_count &lt;-<span class="st"> </span><span class="kw">nrow</span>(hits_data_frame)</a>
+<a class="sourceLine" id="cb63-6" title="6"></a>
+<a class="sourceLine" id="cb63-7" title="7"></a>
+<a class="sourceLine" id="cb63-8" title="8"><span class="cf">while</span>(count <span class="op">&lt;=</span><span class="st"> </span>row_count){</a>
+<a class="sourceLine" id="cb63-9" title="9">  </a>
+<a class="sourceLine" id="cb63-10" title="10">  <span class="co"># Print player name with a little introduction</span></a>
+<a class="sourceLine" id="cb63-11" title="11">  <span class="kw">print</span>(<span class="kw">paste0</span>(<span class="st">&quot;Player Name: &quot;</span>, hits_data_frame<span class="op">$</span>PlayerID[count]))</a>
+<a class="sourceLine" id="cb63-12" title="12">  </a>
+<a class="sourceLine" id="cb63-13" title="13">  </a>
+<a class="sourceLine" id="cb63-14" title="14">  <span class="co"># Update count</span></a>
+<a class="sourceLine" id="cb63-15" title="15">  count =<span class="st"> </span>count<span class="op">+</span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb63-16" title="16">  </a>
+<a class="sourceLine" id="cb63-17" title="17">}</a></code></pre></div>
 <pre><code>## [1] &quot;Player Name: Player01&quot;
 ## [1] &quot;Player Name: Player02&quot;
 ## [1] &quot;Player Name: Player03&quot;
